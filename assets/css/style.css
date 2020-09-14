@@ -25,7 +25,7 @@
 
     color: white;
     background: var(--color-background);
-    background-image: url('assets/image/Background.png');
+    background-image: url('../image/Background.png');
 }
 
 .logo-container img {
@@ -40,8 +40,6 @@
 .logo-container {
     text-align: center;
     margin-bottom: 3.2rem;
-
-
 }
 
 .logo-container h1 {
@@ -140,7 +138,6 @@
             'logo hero hero'
             'buttons buttons total'
         ;
-
     }
 
     .logo-container {
