@@ -11,6 +11,19 @@ body {
     padding-top: 5rem;
 }
 
+.appName {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+    color: white;
+    vertical-align: baseline;
+}
+
+.appName a {
+    text-decoration: none;
+    vertical-align: baseline;
+}
+
+
 .hidden {
     display: none;
 }
@@ -115,6 +128,7 @@ p {
 
 .navBar .buttonGroup {
     flex: 1;
+    margin-right: 3rem;
 }
 
 .navBar .button {
@@ -137,9 +151,28 @@ p {
     line-height: 1rem;
 }
 
+.save {
+    background-color: #00B0FF;
+    color: white;
+    font-weight: bold;
+}
+
+#blank {
+    opacity: 0.5;
+    align-items: baseline;
+    width: 100%;
+    padding-top: 5rem;
+    text-align: center;
+}
+
+#blank * {
+    text-align: center;
+}
+
 .button:active {
     background: #cbd4d7;
     border: thin solid #bac3c6;
+
 }
 
 .button img {
@@ -151,8 +184,8 @@ p {
 }
 
 .buttonGroup {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    padding: 1rem;
 }
 
 .buttonGroup .button {
@@ -189,10 +222,11 @@ p {
 }
 
 .field {
-    display: flex;
+    display: grid;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.8rem;
 }
 
 .field label {
@@ -217,12 +251,13 @@ p {
 
 .field input {
     flex: 1;
-    height: 2rem;
+    height: 1.6rem;
     padding: 0.3rem 0.7rem;
     color: #000;
     background: #fff;
     border: thin solid #dce5e8;
     border-radius: 0.35rem;
+    width: 27rem;
 }
 
 .field input.valid {
