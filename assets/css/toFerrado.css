@@ -157,6 +157,10 @@ p {
     font-weight: bold;
 }
 
+.save:hover {
+    background-color: #4EA4D3;
+}
+
 #blank {
     opacity: 0.5;
     align-items: baseline;
@@ -167,6 +171,11 @@ p {
 
 #blank * {
     text-align: center;
+}
+
+
+#contContacts {
+    color: white;
 }
 
 .button:active {
@@ -407,4 +416,28 @@ p {
 
 .mt4 {
     margin-top: 4rem;
+}
+
+.cardContacts {
+    border-radius: 0.35rem;
+    border: thin solid #deddde;
+    align-items: baseline;
+    margin-bottom: 5px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.imgCard {
+    float: left;
+    height: 10rem;
+    border-radius: 50%;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.iconContact {
+    height: 7rem;
+    border-radius: 50%;
+    margin-right: 16px;
+    margin-left: 16px;
 }

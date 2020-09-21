@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/toferrado.css" />
     <link rel="stylesheet" href="assets/css/register-contact.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -21,34 +22,40 @@
 
     <div id="tela2" class="component">
         <div class="componentContent">
+
             <div class="field">
-                <label for="inputNovaTarefa">Name:</label>
-                <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                <img src="assets/image/Group 21.png" id="photo" class="iconContact">
+                <input type="file" name="photo" accept="image/png, image/jpeg" onChange="loadPhoto(this);" />
+            </div>
+
+            <div class="field">
+                <label for="inputName">Name:</label>
+                <input id="inputName" type="text" autocomplete="off" />
             </div>
             <div class="field">
-                <label for="inputNovaTarefa">Relationship:</label>
-                <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                <label for="inputRelationship">Relationship:</label>
+                <input id="inputRelationship" type="text" autocomplete="off" />
             </div>
             <div class="field">
-                <label for="inputNovaTarefa">Phone:</label>
-                <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                <label for="inputPhone">Phone:</label>
+                <input id="inputPhone" type="text" autocomplete="off" />
             </div>
             <div class="field">
-                <label for="inputNovaTarefa">Email:</label>
-                <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                <label for="inputEmail">Email:</label>
+                <input id="inputEmail" type="text" autocomplete="off" />
             </div>
             <div class="field">
-                <label for="inputNovaTarefa">Birthday:</label>
-                <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                <label for="inputBirthday">Birthday:</label>
+                <input id="inputBirthday" type="text" autocomplete="off" />
             </div>
             <div class="field">
-                <label for="inputNovaTarefa">Notes:</label>
-                <input id="inputNovaTarefa" type="text" autocomplete="off" />
+                <label for="inputNotes">Notes:</label>
+                <input id="inputNotes" type="text" autocomplete="off" />
             </div>
         </div>
 
         <div class="buttonGroup">
-            <button id="btnInc" class="button quarter save" disabled>
+            <button id="btnSave" class="button quarter save">
                 Save
             </button>
         </div>
@@ -58,3 +65,9 @@
 </body>
 
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function loadPhoto(input) {
+        $('#photo')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
+    }
+</script>
