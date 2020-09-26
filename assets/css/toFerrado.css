@@ -147,7 +147,6 @@ p {
     border-radius: 0.5rem;
     background-color: #edf6f9;
     border: thin solid #dce5e8;
-    color: #000;
     line-height: 1rem;
 }
 
@@ -194,7 +193,7 @@ p {
 
 .buttonGroup {
     display: grid;
-    padding: 1rem;
+    width: 28.4rem;
 }
 
 .buttonGroup .button {
@@ -267,6 +266,28 @@ p {
     border: thin solid #dce5e8;
     border-radius: 0.35rem;
     width: 27rem;
+}
+
+.field textarea {
+    flex: 1;
+    height: 1.6rem;
+    padding: 0.3rem 0.7rem;
+    color: #000;
+    background: #fff;
+    border: thin solid #dce5e8;
+    border-radius: 0.35rem;
+    width: 27rem;
+}
+
+.field select {
+    flex: 1;
+    padding: 0.3rem 0.7rem;
+    color: #000;
+    background: #fff;
+    border: thin solid #dce5e8;
+    border-radius: 0.35rem;
+    width: 28.5rem;
+    height: 2.4rem;
 }
 
 .field input.valid {
@@ -421,23 +442,62 @@ p {
 .cardContacts {
     border-radius: 0.35rem;
     border: thin solid #deddde;
-    align-items: baseline;
-    margin-bottom: 5px;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    margin-bottom: 10px;
+    padding: 0.8rem;
+    height: 10rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
 }
 
 .imgCard {
-    float: left;
-    height: 10rem;
+    height: 7rem;
     border-radius: 50%;
-    margin-right: 16px;
-    margin-left: 16px;
+    display: flex;
+    padding: 0.8rem;
 }
 
 .iconContact {
+    width: 7rem;
     height: 7rem;
     border-radius: 50%;
-    margin-right: 16px;
-    margin-left: 16px;
+    margin-bottom: 0.8rem;
+    align-self: flex-start;
+}
+
+.fieldImg {
+    flex: 1;
+    border: thin solid #2a9d8f;
+    border-radius: 0.35rem;
+
+    flex-direction: row;
+    justify-content: space-between;
+    display: grid;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttonCard {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    justify-content: flex-end;
+    border: none;
+    margin: 0.2rem;
+}
+
+.Edit {
+    background-color: #FFD600;
+}
+
+.Delete {
+    background-color: #E63946;
+}
+
+.View {
+    background-color: #00B0FF;
+}
+
+.inputDisable {
+    background-color: #eaeaea !important;
 }

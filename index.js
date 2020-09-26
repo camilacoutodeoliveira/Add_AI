@@ -1,39 +1,22 @@
-let contacts = [{
-        id: '1',
-        photo: 'assets/image/vegeta.png',
-        name: 'Vegeta',
-        relationship: 'Friend',
-        phone: '9940534543',
-        email: 'cah@email.com',
-        birthday: '27/05/1992',
-        notes: 'development'
-    },
-    {
-        id: '1',
-        photo: 'assets/image/Nath.jpg',
-        name: 'Nathy',
-        relationship: 'Friend',
-        phone: '998805-3643',
-        email: 'nathy@email.com',
-        birthday: '27/05/1992',
-        notes: 'finance'
-    }
-];
+let contacts = [];
 
 onload = () => {
-
+    //localStorage.clear()
     let location = window.location.href.split('/')[3];
+    const contactsList = JSON.parse(localStorage.getItem('contacts'));
 
     if (location == 'index.html') {
-        document.querySelector('#contContacts').innerHTML = contacts.length;
+        document.querySelector('#contContacts').innerHTML = contactsList.length;
     } else if (location == 'list-contacts.html') {
+
+        if (contactsList)
+            contacts = contactsList;
 
         showContacts();
 
     } else if (location == 'register-contact.html') {
 
         document.querySelector('#inputName').focus();
-
         document.querySelector('#btnSave').onclick = () => {
             saveContact();
         }
@@ -42,31 +25,38 @@ onload = () => {
 };
 
 const saveContact = () => {
-    // let photo = document.querySelector('#inputPhoto');
-    // let photoValue = photo.value;
 
-    let name = document.querySelector('#inputName');
-    let nameValue = name.value;
+    let photo = document.getElementById('photo');
+    let imgData = getBase64Image(photo);
+    let photoValue = imgData;
 
-    let relationship = document.querySelector('#inputName');
-    let relationshipValue = relationship.value;
+    let name = document.querySelector('#inputName').value;
+    let nameValue = name;
 
-    let phone = document.querySelector('#inputName');
-    let phoneValue = phone.value;
+    let relationship = document.querySelector('#inputRelationship').value;
+    let relationshipValue = relationship;
 
-    let email = document.querySelector('#inputName');
-    let emailValue = email.value;
+    let phone = document.querySelector('#inputPhone').value;
+    let phoneValue = phone;
 
-    let birthday = document.querySelector('#inputName');
-    let birthdayValue = birthday.value;
+    let email = document.querySelector('#inputEmail').value;
+    let emailValue = email;
 
-    let notes = document.querySelector('#inputName');
-    let notesValue = notes.value;
+    let birthday = document.querySelector('#inputBirthday').value;
+    let birthdayValue = birthday;
 
-    if (nameValue != '') {
+    let notes = document.querySelector('#inputNotes').value;
+    let notesValue = notes;
+
+    if (contacts != null) {
+        contacts = JSON.parse(localStorage.getItem('contacts'));
+    }
+
+
+    if (nameValue != '' && phoneValue != null && emailValue != null && relationshipValue != null) {
         contacts.push({
-            id: Math.random.toString().replace('0.', ''),
-            // photo: phoneValue,
+            id: Math.random().toString().replace('0.', ''),
+            photo: photoValue,
             name: nameValue,
             relationship: relationshipValue,
             phone: phoneValue,
@@ -75,12 +65,19 @@ const saveContact = () => {
             notes: notesValue
         });
 
-        name.value = '';
-        relationship.value = '';
-        phone.value = '';
-        email.value = '';
-        birthday.value = '';
-        notes.value = '';
+        document.querySelector('#photo').src = 'assets/image/Group 21.png';
+        document.querySelector('#inputName').value = '';
+        document.querySelector('#inputRelationship').value = '';
+        document.querySelector('#inputPhone').value = '';
+        document.querySelector('#inputEmail').value = '';
+        document.querySelector('#inputBirthday').value = '';
+        document.querySelector('#inputNotes').value = '';
+
+        alert('Salvo com sucesso!');
+
+        saveContacts();
+    } else {
+        alert('Para salvar prencha os campos obrigatórios!');
     }
 }
 
@@ -94,8 +91,8 @@ const showContacts = () => {
         elemCard.classList.add('cardContacts');
         listContacts.appendChild(elemCard);
 
-        let elemPhoto = document.createElement("IMG");
-        elemPhoto.src = t.photo;
+        let elemPhoto = document.createElement("img");
+        elemPhoto.src = "data:image/png;base64," + t.photo;
         elemPhoto.classList.add('imgCard');
         elemCard.appendChild(elemPhoto);
 
@@ -115,9 +112,74 @@ const showContacts = () => {
         elemEmail.innerHTML = t.email;
         elemCard.appendChild(elemEmail);
 
-        elemCard.onclick = () => {
-            //editar, visualizar e exlcuir
+        //View Contact
+        let elemView = document.createElement('button');
+        elemView.classList.add('buttonCard');
+        elemView.classList.add('View');
+        elemCard.appendChild(elemView);
+        elemView.onclick = () => {
+            activateScreen('tela2');
+
+            document.getElementById('photo').src = "data:image/png;base64," + t.photo;
+
+            document.querySelector("#inputPhoto").classList.add('hidden');
+
+            document.querySelector('#inputName').value = t.name;
+            document.querySelector('#inputName').disabled = true;
+            document.querySelector('#inputName').classList.add('inputDisable');
+
+            document.querySelector('#inputRelationship').value = t.relationship;
+            document.querySelector('#inputRelationship').disabled = true;
+            document.querySelector('#inputRelationship').classList.add('inputDisable');
+
+            document.querySelector('#inputPhone').value = t.phone;
+            document.querySelector('#inputPhone').disabled = true;
+            document.querySelector('#inputPhone').classList.add('inputDisable');
+
+            document.querySelector('#inputEmail').value = t.email;
+            document.querySelector('#inputEmail').disabled = true;
+            document.querySelector('#inputEmail').classList.add('inputDisable');
+
+            document.querySelector('#inputBirthday').value = t.birthday;
+            document.querySelector('#inputBirthday').disabled = true;
+            document.querySelector('#inputBirthday').classList.add('inputDisable');
+
+            document.querySelector('#inputNotes').value = t.notes;
+            document.querySelector('#inputNotes').disabled = true;
+            document.querySelector('#inputNotes').classList.add('inputDisable');
+
+            document.querySelector('#btnSave').classList.add('hidden');
         }
+
+        //Edit Contact
+        let elemEdit = document.createElement('button');
+        elemEdit.classList.add('buttonCard');
+        elemEdit.classList.add('Edit');
+        elemCard.appendChild(elemEdit);
+        elemEdit.onclick = () => {
+            activateScreen('tela2');
+
+            document.getElementById('photo').src = "data:image/png;base64," + t.photo;
+            document.querySelector('#inputName').value = t.name;
+            document.querySelector('#inputRelationship').value = t.relationship;
+            document.querySelector('#inputPhone').value = t.phone;
+            document.querySelector('#inputEmail').value = t.email;
+            document.querySelector('#inputBirthday').value = t.birthday;
+            ocument.querySelector('#inputNotes').value = t.notes;
+
+        }
+
+        //Delete Contact
+        let elemDelete = document.createElement('button');
+        elemDelete.classList.add('buttonCard');
+        elemDelete.classList.add('Delete');
+        elemCard.appendChild(elemDelete);
+        elemDelete.onclick = () => {
+            let itens = contacts.filter(item => item.id !== t.id)
+            localStorage.setItem('contacts', JSON.stringify(itens));
+            location.reload();
+        }
+
 
     });
 
@@ -129,4 +191,29 @@ const showContacts = () => {
         listContacts.classList.add('hidden');
         document.querySelector('#blank').classList.remove('hidden');
     }
+}
+
+const saveContacts = () => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+};
+
+const activateScreen = (comp) => {
+    let screenList = document.querySelectorAll('body > .component');
+    screenList.forEach((c) => c.classList.add('hidden'));
+    document.querySelector('#' + comp).classList.remove('hidden');
+};
+
+
+function getBase64Image(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+
 }

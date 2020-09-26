@@ -26,8 +26,57 @@
                 <p>No contact registered!</p>
             </div>
 
-            <div id="listContacts" class="hidden">
+            <div id="listContacts" class="hidden"> </div>
+        </div>
 
+    </div>
+
+    <div id="tela2" class="component hidden">
+        <div class="componentContent">
+
+            <div class="field">
+                <img src="assets/image/Group 21.png" id="photo" class="iconContact">
+                <input id="inputPhoto" type="file" name="photo" accept="image/png, image/jpeg"
+                    onChange="loadPhoto(this);" />
+            </div>
+
+            <div class="field">
+                <label for="inputName">Name*:</label>
+                <input id="inputName" type="text" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputRelationship">Relationship*:</label>
+                <select id="inputRelationship" type="text" autocomplete="off">
+                    <option value=""></option>
+                    <option value="college">College</option>
+                    <option value="job">Job</option>
+                    <option value="family">Family</option>
+                    <option value="friend">Friend</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="inputPhone">Phone*:</label>
+                <input id="inputPhone" type="text" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputEmail">Email*:</label>
+                <input id="inputEmail" type="email" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputBirthday">Birthday:</label>
+                <input id="inputBirthday" type="date" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputNotes">Notes:</label>
+                <textarea id="inputNotes" type="text" autocomplete="off" maxlength="100"></textarea>
+            </div>
+        </div>
+
+        <div class="componentContent">
+            <div class="buttonGroup">
+                <button id="btnSave" class="button save">
+                    Save
+                </button>
             </div>
         </div>
 
