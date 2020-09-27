@@ -14,6 +14,7 @@ onload = () => {
 
         showContacts();
 
+
     } else if (location == 'register-contact.html') {
 
         document.querySelector('#inputName').focus();
@@ -51,7 +52,6 @@ const saveContact = () => {
     if (contacts != null) {
         contacts = JSON.parse(localStorage.getItem('contacts'));
     }
-
 
     if (nameValue != '' && phoneValue != null && emailValue != null && relationshipValue != null) {
         contacts.push({
@@ -113,9 +113,10 @@ const showContacts = () => {
         elemCard.appendChild(elemEmail);
 
         //View Contact
-        let elemView = document.createElement('button');
-        elemView.classList.add('buttonCard');
-        elemView.classList.add('View');
+        let elemView = document.createElement('img');
+        elemView.src = 'assets/image/eye.png'
+        // elemView.classList.add('buttonCard');
+        // elemView.classList.add('View');
         elemCard.appendChild(elemView);
         elemView.onclick = () => {
             activateScreen('tela2');
@@ -151,36 +152,36 @@ const showContacts = () => {
             document.querySelector('#btnSave').classList.add('hidden');
         }
 
-        //Edit Contact
-        let elemEdit = document.createElement('button');
-        elemEdit.classList.add('buttonCard');
-        elemEdit.classList.add('Edit');
-        elemCard.appendChild(elemEdit);
-        elemEdit.onclick = () => {
-            activateScreen('tela2');
+        // //Edit Contact
+        // let elemEdit = document.createElement('button');
+        // elemEdit.classList.add('buttonCard');
+        // elemEdit.classList.add('Edit');
+        // elemCard.appendChild(elemEdit);
+        // elemEdit.onclick = () => {
 
-            document.getElementById('photo').src = "data:image/png;base64," + t.photo;
-            document.querySelector('#inputName').value = t.name;
-            document.querySelector('#inputRelationship').value = t.relationship;
-            document.querySelector('#inputPhone').value = t.phone;
-            document.querySelector('#inputEmail').value = t.email;
-            document.querySelector('#inputBirthday').value = t.birthday;
-            ocument.querySelector('#inputNotes').value = t.notes;
+        //     activateScreen('tela2');
 
-        }
+        //     document.querySelector('#inputId').value = t.id;
+        //     document.getElementById('photo').src = "data:image/png;base64," + t.photo;
+        //     document.querySelector('#inputName').value = t.name;
+        //     document.querySelector('#inputRelationship').value = t.relationship;
+        //     document.querySelector('#inputPhone').value = t.phone;
+        //     document.querySelector('#inputEmail').value = t.email;
+        //     document.querySelector('#inputBirthday').value = t.birthday;
+        //     document.querySelector('#inputNotes').value = t.notes;
+        // }
 
         //Delete Contact
-        let elemDelete = document.createElement('button');
-        elemDelete.classList.add('buttonCard');
-        elemDelete.classList.add('Delete');
+        let elemDelete = document.createElement('img');
+        elemDelete.src = 'assets/image/delete.png';
+        // elemDelete.classList.add('buttonCard');
+        // elemDelete.classList.add('Delete');
         elemCard.appendChild(elemDelete);
         elemDelete.onclick = () => {
             let itens = contacts.filter(item => item.id !== t.id)
             localStorage.setItem('contacts', JSON.stringify(itens));
             location.reload();
         }
-
-
     });
 
 
@@ -202,7 +203,6 @@ const activateScreen = (comp) => {
     screenList.forEach((c) => c.classList.add('hidden'));
     document.querySelector('#' + comp).classList.remove('hidden');
 };
-
 
 function getBase64Image(img) {
     var canvas = document.createElement("canvas");
