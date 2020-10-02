@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/toferrado.css" />
     <link rel="stylesheet" href="assets/css/register-contact.css">
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/imagens/icones/favicon.ico" />
     <script src="index.js"></script>
+    <script>
+        navigator.serviceWorker.register('/sw.js');
+    </script>
 </head>
 
 <body>
     <header class="headerBar dark">
         <div class="appName">
             <a href="index.html">
-                <img src="assets/image/Group 20.png " />
+                <img src="assets/imagens/Group 20.png " />
             </a>
             Register Contact
         </div>
@@ -24,14 +29,22 @@
         <div class="componentContent">
 
             <div class="field">
-                <img src="assets/image/Group 21.png" id="photo" class="iconContact">
+                <img src="assets/imagens/Group 21.png" id="photo" class="iconContact">
                 <input id="inputPhoto" type="file" name="photo" accept="image/png, image/jpeg"
-                    onChange="loadPhoto(this);" />
+                    onChange="loadPhoto(this);" style="color:transparent; width: 36%;" />
             </div>
 
             <div class="field">
                 <label for="inputName">Name*:</label>
                 <input id="inputName" type="text" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputPhone">Phone*:</label>
+                <input id="inputPhone" type="number" maxlength="14" autocomplete="off" />
+            </div>
+            <div class="field">
+                <label for="inputEmail">Email*:</label>
+                <input id="inputEmail" type="email" autocomplete="off" />
             </div>
             <div class="field">
                 <label for="inputRelationship">Relationship*:</label>
@@ -42,14 +55,6 @@
                     <option value="family">Family</option>
                     <option value="friend">Friend</option>
                 </select>
-            </div>
-            <div class="field">
-                <label for="inputPhone">Phone*:</label>
-                <input id="inputPhone" type="text" autocomplete="off" />
-            </div>
-            <div class="field">
-                <label for="inputEmail">Email*:</label>
-                <input id="inputEmail" type="email" autocomplete="off" />
             </div>
             <div class="field">
                 <label for="inputBirthday">Birthday:</label>

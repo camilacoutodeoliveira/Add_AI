@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Aí</title>
     <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/imagens/icones/favicon.ico" />
     <script src="index.js"></script>
+    <script>
+        navigator.serviceWorker.register('/sw.js');
+    </script>
 </head>
 
 <body>
@@ -20,12 +25,12 @@
             <div class="buttons-container">
                 <a href="register-contact.html" class="register-contact">
                     Register Contact
-                    <img src="assets/image/Group 15.png" class="hero-image" />
+                    <img src="assets/imagens/Group 15.png" class="hero-image" />
                 </a>
             </div>
             <div class="buttons-container">
                 <a href="list-contacts.html" class="list-contacts">
-                    <img src="assets/image/Group 16.png" class="hero-image" />
+                    <img src="assets/imagens/Group 16.png" class="hero-image" />
                     List Contacts
                 </a>
             </div>

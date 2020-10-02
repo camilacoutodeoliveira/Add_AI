@@ -25,7 +25,6 @@
 
     color: white;
     background: var(--color-background);
-    background-image: url('../image/Background.png');
 }
 
 .logo-container img {

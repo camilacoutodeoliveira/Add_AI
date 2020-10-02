@@ -192,8 +192,7 @@ p {
 }
 
 .buttonGroup {
-    display: grid;
-    width: 28.4rem;
+    display: flex;
 }
 
 .buttonGroup .button {
@@ -265,7 +264,7 @@ p {
     background: #fff;
     border: thin solid #dce5e8;
     border-radius: 0.35rem;
-    width: 27rem;
+    /* width: 7rem; */
 }
 
 .field textarea {
@@ -276,7 +275,7 @@ p {
     background: #fff;
     border: thin solid #dce5e8;
     border-radius: 0.35rem;
-    width: 27rem;
+    /* width: 27rem; */
 }
 
 .field select {
@@ -286,7 +285,7 @@ p {
     background: #fff;
     border: thin solid #dce5e8;
     border-radius: 0.35rem;
-    width: 28.5rem;
+    /* width: 28.5rem; */
     height: 2.4rem;
 }
 

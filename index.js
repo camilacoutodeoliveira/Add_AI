@@ -7,13 +7,12 @@ onload = () => {
 
     if (location == 'index.html') {
         document.querySelector('#contContacts').innerHTML = contactsList.length;
-    } else if (location == 'list-contacts.html') {
 
+    } else if (location == 'list-contacts.html') {
         if (contactsList)
             contacts = contactsList;
 
         showContacts();
-
 
     } else if (location == 'register-contact.html') {
 
@@ -49,9 +48,7 @@ const saveContact = () => {
     let notes = document.querySelector('#inputNotes').value;
     let notesValue = notes;
 
-    if (contacts != null) {
-        contacts = JSON.parse(localStorage.getItem('contacts'));
-    }
+    contacts = JSON.parse(localStorage.getItem('contacts'));
 
     if (nameValue != '' && phoneValue != null && emailValue != null && relationshipValue != null) {
         contacts.push({
@@ -65,7 +62,7 @@ const saveContact = () => {
             notes: notesValue
         });
 
-        document.querySelector('#photo').src = 'assets/image/Group 21.png';
+        document.querySelector('#photo').src = 'assets/imagens/Group 21.png';
         document.querySelector('#inputName').value = '';
         document.querySelector('#inputRelationship').value = '';
         document.querySelector('#inputPhone').value = '';
@@ -73,11 +70,12 @@ const saveContact = () => {
         document.querySelector('#inputBirthday').value = '';
         document.querySelector('#inputNotes').value = '';
 
-        alert('Salvo com sucesso!');
+        //alert('Salvo com sucesso!');
 
         saveContacts();
-    } else {
-        alert('Para salvar prencha os campos obrigatórios!');
+        // } else {
+        //     alert('Para salvar prencha os campos obrigatórios!');
+        // }
     }
 }
 
@@ -114,7 +112,7 @@ const showContacts = () => {
 
         //View Contact
         let elemView = document.createElement('img');
-        elemView.src = 'assets/image/eye.png'
+        elemView.src = 'assets/imagens/eye.png'
         // elemView.classList.add('buttonCard');
         // elemView.classList.add('View');
         elemCard.appendChild(elemView);
@@ -173,7 +171,7 @@ const showContacts = () => {
 
         //Delete Contact
         let elemDelete = document.createElement('img');
-        elemDelete.src = 'assets/image/delete.png';
+        elemDelete.src = 'assets/imagens/delete.png';
         // elemDelete.classList.add('buttonCard');
         // elemDelete.classList.add('Delete');
         elemCard.appendChild(elemDelete);
@@ -216,4 +214,4 @@ function getBase64Image(img) {
 
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 
-}
+};

@@ -2,19 +2,24 @@
 <html lang="en">
 
 <head>
+    <title>Add Aí</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/toferrado.css" />
     <link rel="stylesheet" href="assets/css/register-contact.css">
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/imagens/icones/favicon.ico" />
     <script src="index.js"></script>
-    <title>Document</title>
+    <script>
+        navigator.serviceWorker.register('/sw.js');
+    </script>
 </head>
 
 <body>
     <header class="headerBar dark">
         <div class="appName">
             <a href="index.html">
-                <img src="assets/image/Group 20.png" />
+                <img src="assets/imagens/Group 20.png" />
             </a>
             List Contacts
         </div>
@@ -22,7 +27,7 @@
     <div id="tela1" class="component">
         <div class="componentContent">
             <div id="blank">
-                <img src="assets/image/Group 16.png" />
+                <img src="assets/imagens/Group 16.png" />
                 <p>No contact registered!</p>
             </div>
 
@@ -34,7 +39,7 @@
     <div id="tela2" class="component hidden">
         <div class="componentContent">
             <div class="field">
-                <img src="assets/image/Group 21.png" id="photo" class="iconContact">
+                <img src="assets/imagens/Group 21.png" id="photo" class="iconContact">
                 <input id="inputPhoto" type="file" name="photo" accept="image/png, image/jpeg"
                     onChange="loadPhoto(this);" />
             </div>
