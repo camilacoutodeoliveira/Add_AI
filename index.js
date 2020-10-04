@@ -58,6 +58,9 @@ const saveContact = () => {
     } else if (!regexEmail.test(emailValue)) {
         window.alert('Preencha o email corretamente');
     } else {
+        if (contacts == null) {
+            contacts = [];
+        }
         contacts.push({
             id: Math.random().toString().replace('0.', ''),
             photo: photoValue,
