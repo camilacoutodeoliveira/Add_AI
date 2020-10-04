@@ -5,7 +5,6 @@
 ### Features:
 
   - Adicionar contatos
-  
   - Excluir contatos
 
 ### Future features!
@@ -30,3 +29,12 @@
 - Listar os contados cadastrados permitindo visualizar ou deletar o contato cadastrado;
 
 ![listContacts](https://user-images.githubusercontent.com/27986336/95006917-df789680-05df-11eb-8f0e-c326e6b4f02f.jpg)
+
+### Bugs to next Sprint kkkk (Devido ao prazo para entrega da atividade alguns pontos não foram corrigidos no prazo)
+
+- Apesar de ter service worked a aplicação não esta funcionando offline;
+- Campo de telefone aceitando letras;
+- Corrigir mensagens de validação;
+- Ao visualizar um contato retornar para a lista de contatos;
+- Corrigir carregamento de imagens quando não forem quadradas;
+
