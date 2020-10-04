@@ -4,18 +4,20 @@
 
 ### Features:
 
-  - Adicionar contatos(ok)
+  - Adicionar contatos
   
-  - Excluir contatos (ok)
+  - Excluir contatos
 
 ### Future features!
 
-   - Filtrar contatos (NotOk)
-   - Editar contatos (NotOk)
+   - Filtrar contatos
+   - Editar contatos
 
 ### Home:
 - O usuário pode escolher entre adicionar um contato ou listar os contatos adicionados;
 - Nesta tela também há um contador de contatos cadastrados na aplicação;
+
+
 
 ### Cadastrar Contato:
 - O usuário pode registrar os dados do contato;
