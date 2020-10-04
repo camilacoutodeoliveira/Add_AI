@@ -54,9 +54,9 @@ const saveContact = () => {
     if (nameValue != '' && phoneValue != '' && emailValue != '' && relationshipValue == '') {
         window.alert('Preencha os campos obrigatórios!');
     } else if (phoneValue.length < 11) {
-        window.alert('Preencha o campo corretamente (xx) x xxxx xxxx!');
+        window.alert('Preencha o campo de telefone corretamente (xx) x xxxx xxxx!');
     } else if (!regexEmail.test(emailValue)) {
-        window.alert('Preencha o campo corretamente');
+        window.alert('Preencha o email corretamente');
     } else {
         contacts.push({
             id: Math.random().toString().replace('0.', ''),
