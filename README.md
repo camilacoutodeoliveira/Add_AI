@@ -2,7 +2,7 @@
 
  Uma aplicação para registrar as principais informações dos seus contatos!
 
- Uma aplicação com fins acadêmicos para a displina de Tópicos Especias, construída unicamente com Javascript, CSS e HTMLl;
+ Uma aplicação com fins acadêmicos para a displina de Tópicos Especias, construída unicamente com Javascript, CSS e HTML;
 
 ### Features:
 
@@ -35,9 +35,10 @@
 ![listContacts](https://user-images.githubusercontent.com/27986336/95006917-df789680-05df-11eb-8f0e-c326e6b4f02f.jpg)
 
 ### Bugs 
+
 (Devido ao prazo para entrega da atividade alguns pontos não foram corrigidos no prazo, ainda assim deixo-os registrados para ajustes futuros da aplicação)
 
-- Apesar de ter service worked a aplicação não esta funcionando offline;
+- Apesar de ter service worked a aplicação não está funcionando offline;
 - Campo de telefone aceitando letras;
 - Corrigir mensagens de validação;
 - Ao visualizar um contato retornar para a lista de contatos;
