@@ -4,21 +4,29 @@
 
 ### Features:
 
-  - Adicionar contatos(ok)
+  - Adicionar contatos
   
-  - Excluir contatos (ok)
+  - Excluir contatos
 
 ### Future features!
 
-   - Filtrar contatos (NotOk)
-   - Editar contatos (NotOk)
+   - Filtrar contatos
+   - Editar contatos
 
-### Home:
+### Home
 - O usuário pode escolher entre adicionar um contato ou listar os contatos adicionados;
 - Nesta tela também há um contador de contatos cadastrados na aplicação;
 
-### Cadastrar Contato:
-- O usuário pode registrar os dados do contato;
+![home](https://user-images.githubusercontent.com/27986336/95006857-43e72600-05df-11eb-8df5-fe7a109196e3.jpg)
 
-### Lista de Contatos:
+### Cadastrar Contato
+- O usuário pode registrar os dados do contato;
+- Importante ficar atento a formatação dos campos de email e telefone ao salvar!
+
+![register1](https://user-images.githubusercontent.com/27986336/95006943-38482f00-05e0-11eb-9c41-e338344cee1e.jpg)
+
+
+### Lista de Contatos
 - Listar os contados cadastrados permitindo visualizar ou deletar o contato cadastrado;
+
+![listContacts](https://user-images.githubusercontent.com/27986336/95006917-df789680-05df-11eb-8f0e-c326e6b4f02f.jpg)
