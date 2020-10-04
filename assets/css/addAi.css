@@ -500,3 +500,16 @@ p {
 .inputDisable {
     background-color: #eaeaea !important;
 }
+
+.searhInput {
+    font-size: 16px;
+    margin-bottom: 1.6rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    width: 50%;
+    border-width: 0 0 1px;
+    border-color: #dce5e8;
+    outline: 0;
+}

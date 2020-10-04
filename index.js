@@ -12,7 +12,7 @@ onload = () => {
         if (contactsList)
             contacts = contactsList;
 
-        showContacts();
+        showContacts(contacts);
 
     } else if (location == 'register-contact.html') {
 
@@ -49,8 +49,15 @@ const saveContact = () => {
     let notesValue = notes;
 
     contacts = JSON.parse(localStorage.getItem('contacts'));
+    var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 
-    if (nameValue != '' && phoneValue != null && emailValue != null && relationshipValue != null) {
+    if (nameValue != '' && phoneValue != '' && emailValue != '' && relationshipValue == '') {
+        window.alert('Preencha os campos obrigatórios!');
+    } else if (phoneValue.length < 11) {
+        window.alert('Preencha o campo corretamente (xx) x xxxx xxxx!');
+    } else if (!regexEmail.test(emailValue)) {
+        window.alert('Preencha o campo corretamente');
+    } else {
         contacts.push({
             id: Math.random().toString().replace('0.', ''),
             photo: photoValue,
@@ -70,18 +77,24 @@ const saveContact = () => {
         document.querySelector('#inputBirthday').value = '';
         document.querySelector('#inputNotes').value = '';
 
-        //alert('Salvo com sucesso!');
+        window.alert('Salvo com sucesso!');
 
         saveContacts();
-        // } else {
-        //     alert('Para salvar prencha os campos obrigatórios!');
-        // }
+
     }
 }
 
-const showContacts = () => {
+const showContacts = (contacts) => {
     const listContacts = document.querySelector('#listContacts');
     listContacts.innerHTML = '';
+
+    // if (contacts.length > 0) {
+    //     let elemSearch = document.createElement('input');
+    //     elemSearch.setAttribute("id", "searchID");
+    //     elemSearch.classList.add('searhInput');
+    //     elemSearch.placeholder = 'Search contacts';
+    //     listContacts.appendChild(elemSearch);
+    // }
 
     contacts.forEach((t) => {
 
@@ -208,7 +221,7 @@ function getBase64Image(img) {
     canvas.height = img.height;
 
     var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0, img.width, img.height);
 
     var dataURL = canvas.toDataURL("image/png");
 

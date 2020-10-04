@@ -5,7 +5,7 @@
     <title>Add Aí</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/toferrado.css" />
+    <link rel="stylesheet" href="assets/css/addAi.css" />
     <link rel="stylesheet" href="assets/css/register-contact.css">
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/png" href="/imagens/icones/favicon.ico" />
@@ -31,7 +31,7 @@
             <div class="field">
                 <img src="assets/imagens/Group 21.png" id="photo" class="iconContact">
                 <input id="inputPhoto" type="file" name="photo" accept="image/png, image/jpeg"
-                    onChange="loadPhoto(this);" style="color:transparent; width: 36%;" />
+                    onchange="loadFile(event)" style="color:transparent; width: 36%;" />
             </div>
 
             <div class="field">
@@ -40,7 +40,7 @@
             </div>
             <div class="field">
                 <label for="inputPhone">Phone*:</label>
-                <input id="inputPhone" type="number" maxlength="14" autocomplete="off" />
+                <input id="inputPhone" type="text" minlength="11" maxlength="11" autocomplete="off" />
             </div>
             <div class="field">
                 <label for="inputEmail">Email*:</label>
@@ -49,7 +49,7 @@
             <div class="field">
                 <label for="inputRelationship">Relationship*:</label>
                 <select id="inputRelationship" type="text" autocomplete="off">
-                    <option value=""></option>
+                    <option value="0"></option>
                     <option value="college">College</option>
                     <option value="job">Job</option>
                     <option value="family">Family</option>
@@ -79,9 +79,13 @@
 </body>
 
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-    function loadPhoto(input) {
-        $('#photo')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
-    }
+    document.getElementById('inputPhone').addEventListener('blur', function (e) {
+        var x = e.target.value.replace(/\D/g, '').match(/(\d{2})(\d{5})(\d{4})/);
+        e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3];
+    });
+    var loadFile = function (event) {
+        var image = document.getElementById('photo');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
 </script>
