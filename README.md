@@ -7,6 +7,8 @@
 ### Features:
 
   - Adicionar contatos
+  - Listar contatos
+  - Visualizar contato
   - Excluir contatos
 
 ### Future features!
